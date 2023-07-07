@@ -1,0 +1,5 @@
+/* Write your code here. */
+.thumbnailContainer {
+  display: flex;
+  flex-direction: row;
+}
