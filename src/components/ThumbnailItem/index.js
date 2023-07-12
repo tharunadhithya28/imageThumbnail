@@ -1,18 +1,25 @@
 import {Component} from 'react'
 
 class ThumbnailItem extends Component {
-    const onClickThumbnail = () => {
-      changeGalleryImage(id)
-    }
-  render() {
+  onClickThumbnail = () => {
     const {imageList, changeGalleryImage} = this.props
     const {id, thumbnailUrl} = imageList
-    
+    changeGalleryImage(id)
+  }
+
+  render() {
+    const {imageList, thumbnailAltText, changeGalleryImage} = this.props
+
+    const {id, thumbnailUrl} = imageList
 
     return (
-      <ul className="eachThumbnail">
-        <img src={thumbnailUrl} onClick={onClickThumbnail} />
-      </ul>
+      <li className="eachThumbnail">
+        <img
+          src={thumbnailUrl}
+          onClick={this.onClickThumbnail}
+          alt={thumbnailAltText}
+        />
+      </li>
     )
   }
 }

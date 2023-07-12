@@ -78,18 +78,18 @@ class Gallery extends Component {
 
   changeGalleryImage = id => {
     const {activeId} = this.state
-    const newId = imagesList.filter(eachImage => eachImage.id === id)
+    const newId = imagesList.find(eachImage => eachImage.id === id)
     this.setState({activeId: newId})
   }
 
   render() {
     const {activeId} = this.state
-    const {imageUrl} = imagesList[activeId]
+    const {imageUrl, imageAltText} = imagesList[activeId]
 
     return (
       <div>
         <div>
-          <img src={imageUrl} alt="nature" />
+          <img src={imageUrl} alt={imageAltText} />
         </div>
         <h1> Nature Photography </h1>
         <p> Nature Photography by Rahul </p>
